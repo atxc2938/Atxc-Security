@@ -8,20 +8,44 @@
         body {
             background-color: black;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: system-ui, sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+        .top-text {
+            position: absolute;
+            top: 5%;
+            font-size: 3em; /* Diminuiu um pouco */
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .left-links {
+            position: absolute;
+            left: 2%;
+            top: 30%;
+            transform: translateY(-50%);
+        }
+        .left-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
-    <div>
-        <p>Esta é a página de conteúdo.</p>
+    <div class="top-text">
+        <p>"Hugs are worth more than handshakes."</p>
+    </div>
+    <div class="left-links">
+        <a href="pagina_reconhecimento_passivo.html">[reconhecimento passivo]</a>
+        <a href="pagina_reconhecimento_ativo.html">[reconhecimento ativo]</a>
     </div>
 </body>
 </html>
