@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconhecimento Passivo</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: system-ui, sans-serif; /* Adicionando a fonte "system" */
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        h2 {
+            color: white;
+            text-align: center;
+        }
+        h3 {
+            color: #9b59b6; /* Roxo */
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .content {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .top-links {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .top-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            font-size: 1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #9b59b6;
+        }
+        .highlight {
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-links">
+        <a href="conteudo.html">[conteúdo]</a>
+        <a href="index.html">[home]</a>
+    </div>
+    <div class="content">
+        <h1>Reconhecimento Passivo</h1>
+        <p>É a reunião de informações úteis extraídas à base da não agressão.</p>
+        <p>Nesta fase, temos como objetivo coletar dados sobre o alvo sem alertá-lo sobre nossa intenção, isso é, sem deixar com que ele saiba da nossa presença.</p>
+        <p>Tendo isso em mente, podemos usar de técnicas de reconhecimento que façam pouca, ou nenhuma, requisição ao alvo. Algumas delas são:</p>
+        
+        <h2>OSINT</h2>
+        <p>Open Source Intelligence é a prática de coletar e analisar informações de fontes públicas, disponíveis na surface web. Útil para obter dados sem precisar acessar algo confidencial ou privado.</p>
+
+        <h3>Google Hacking:</h3>
+        <table>
+            <tr>
+                <th>Syntax</th>
+                <th>Exemplo</th>
+                <th>Função</th>
+            </tr>
+            <tr>
+                <td>site</td>
+                <td>site:scanme.nmap.org</td>
+                <td>Pesquisar um site específico.</td>
+            </tr>
+            <tr>
+                <td>related</td>
+                <td>related:scanme.nmap.org</td>
+                <td>Pesquisar sites relacionados.</td>
+            </tr>
+            <tr>
+                <td>""</td>
+                <td>"phrase or word"</td>
+                <td>Encontre resultados com a frase exata da pesquisa.</td>
+            </tr>
+            <tr>
+                <td>filetype</td>
+                <td>filetype:pdf</td>
+                <td>Encontre arquivos PDF relacionados a um determinado termo.</td>
+            </tr>
+            <tr>
+                <td>inurl</td>
+                <td>inurl:tango.com</td>
+                <td>Pesquisar URLs com palavras específicas.</td>
+            </tr>
+            <tr>
+                <td>intext</td>
+                <td>intext:gmail.com</td>
+                <td>Pesquisar palavras específicas no código-fonte.</td>
+            </tr>
+        </table>
+        <p><strong>Extração de domínio:</strong><br>
+        site:*.scanme.nmap.org</p>
+        <p><strong>Operadores juntos:</strong><br>
+        site:*.scanme.nmap.org inurl:login filetype:txt</p>
+        
+        <h3>Retirada de email de vazamento:</h3>
+        <p>É possível utilizar ferramentas como "have i been pwned" para ver se houve vazamento de uma determinada conta. A partir disso, baixando bancos de dados disponíveis na web, há ferramentas que extraem informações do BD.</p>
+        <p><strong>Ex:</strong> <code>grep -H/-a &lt;arquivo_do_BD&gt;</code></p>
+        <ul>
+            <li>-H: Mostra qual arquivo é</li>
+            <li>-a: Muda o arquivo caso dê erro com binário</li>
+        </ul>
+        
+        <h3>Opções de sites de vazamentos:</h3>
+        <p><strong>dark web:</strong></p>
+        <ol>
+            <li>Karma: <a href="http://pwndb2am4tzkvold.onion/" target="_blank">http://pwndb2am4tzkvold.onion/</a></li>
+            <li>Deep search: <a href="http://xjypo5vzgmo7jca6b322dnqbsdnp3amd24ybx26x5nxbusccjkm4pwid.onion/" target="_blank">http://xjypo5vzgmo7jca6b322dnqbsdnp3amd24ybx26x5nxbusccjkm4pwid.onion/</a></li>
+            <li>Dehashed: <a href="https://dehashed.com/" target="_blank">https://dehashed.com/</a></li>
+        </ol>
+        
+        <h3>Shodan:</h3>
+        <p>O Shodan é um site que recolhe informações de dispositivos conectados à internet. Usando o IP do server ou o DNS com a ferramenta DNSrecon, podemos usar o Shodan para usufruir disso.</p>
+        
+        <h2 class="highlight">Ferramentas</h2>
+        
+        <h3>DNSrecon:</h3>
+        <p>Serve para buscar subdomínios concatenados a um site ou até mesmo fazer um brute force.</p>
+        
+        <h3>Wappalyzer:</h3>
+        <p>É uma extensão do navegador onde é possível descobrir frameworks front/back-end que o alvo utiliza no site, além de SO, versão de sistema. Podendo explorar vulnerabilidades já conhecidas.</p>
+    </div>
+</body>
+</html>
 
